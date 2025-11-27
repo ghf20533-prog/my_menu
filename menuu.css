@@ -128,10 +128,12 @@ header {
     border-radius: 12px;
     width: 320px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
     flex-direction: column;
     padding: 15px;
-    transition: all 0.3s ease-in-out;
+
 
 }
 @media (max-width: 768px) {
@@ -149,6 +151,8 @@ header {
 }
 
 .cart-header {
+    visibility: visible;
+    opacity: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -709,6 +713,22 @@ header {
     color: white;
     font-size: 20px;
     margin-bottom: 10px;
+}
+/* استایل واکنشگرا برای سبد خرید در موبایل */
+@media (max-width: 768px) {
+    .cart-dropdown {
+        width: 90%; /* عرض سبد خرید در موبایل */
+        left: 5%;  /* فاصله از سمت چپ */
+        right: auto; /* حذف راست که باعث مشکل در موقعیت میشه */
+        top: 60px;  /* فاصله از بالا برای نوار ناوبری */
+        padding: 15px; /* مقدار مناسب برای فضای داخلی */
+    }
+    .cart-dropdown .cart-header h3 {
+        font-size: 16px; /* تغییر اندازه نوشته در موبایل */
+    }
+    .cart-item {
+        font-size: 14px; /* تغییر اندازه متن آیتم‌ها */
+    }
 }
 
 
